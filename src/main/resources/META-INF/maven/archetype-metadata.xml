@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<archetype-descriptor
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+        name="multi-module">
+
+    <requiredProperties>
+        <requiredProperty key="groupId">
+            <defaultValue>com.youzan</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <modules>
+        <module id="api" dir="api" name="api">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
+        <module id="deploy" dir="deploy" name="deploy">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8" packaged="false">
+                    <directory></directory>
+                    <includes>
+                        <include>**/*.properties</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="false">
+                    <directory>src/main/assembly</directory>
+                    <includes>
+                        <include>**/*.xml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="false">
+                    <directory>src/main/bin</directory>
+                    <includes>
+                        <include>**/*.sh</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="false">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.xml</include>
+                        <include>**/*.properties</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
+
+        <module id="impl" dir="impl" name="impl">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    </fileSet>
+                    <fileSet filtered="true" encoding="UTF-8" packaged="false">
+                        <directory>src/main/resources</directory>
+                        <includes>
+                            <include>**/*.xml</include>
+                        </includes>
+                    </fileSet>
+            </fileSets>
+        </module>
+    </modules>
+
+    <fileSets>
+        <fileSet filtered="true" encoding="UTF-8" packaged="false">
+            <directory></directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</archetype-descriptor>

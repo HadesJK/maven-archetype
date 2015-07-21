@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <artifactId>parent-pom</artifactId>
+        <groupId>com.youzan</groupId>
+        <version>1.0.1</version>
+    </parent>
+
+    <artifactId>impl</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>api</module>
+        <module>deploy</module>
+        <module>impl</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.youzan.platform</groupId>
+                <artifactId>bootstrap</artifactId>
+                <version>2.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youzan.platform</groupId>
+                <artifactId>datasource</artifactId>
+                <version>2.1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.youzan.platform</groupId>
+                <artifactId>redisclient</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>snapshots</id>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+            <url>http://maven.qima-inc.com/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+
+</project>
